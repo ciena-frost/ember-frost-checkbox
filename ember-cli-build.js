@@ -14,6 +14,8 @@ module.exports = function (defaults) {
     }
   })
 
+    app.import('bower_components/highlightjs/styles/github.css')
+
   /*
     This build file specifes the options for the dummy test app of this
     addon, located in `/tests/dummy`

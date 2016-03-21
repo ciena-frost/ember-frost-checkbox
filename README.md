@@ -21,11 +21,26 @@ ember install ember-frost-checkbox
 
 ## API
 
-COMING SOON
+| Attribute   | Type | Value | Description |
+| ----------- | ---- | ----- | ----------- |
+| `onInput`   |`string` | `<action-name>` |The action callback to call when the value of the checkbox changes as the user clicks |
 
 ## Examples
 
-COMING SOON
+```
+{{#frost-checkbox
+  id='errored'
+  classNameBindings='error'
+  value='value'
+  onInput=(action 'value')}}errored
+{{/frost-checkbox}}
+```
+
+```javascript
+value (attrs) {
+  console.log(attrs.id + ' - ' + attrs.value)
+}
+```
 
 ## Development
 ### Setup

@@ -23,16 +23,14 @@ ember install ember-frost-checkbox
 
 | Attribute   | Type | Value | Description |
 | ----------- | ---- | ----- | ----------- |
-| `onInput`   |`string` | `<action-name>` |The action callback to call when the value of the checkbox changes as the user clicks |
+| `onInput`   |`string` | `<action-name>` | The action callback to call when the value of the checkbox changes as the user clicks |
 
 ## Examples
 
 ```
 {{#frost-checkbox
-  id='errored'
-  classNameBindings='error'
-  value='value'
-  onInput=(action 'value')}}errored
+  id='myCheckbox'
+  onInput=(action 'value')}}My checkbox
 {{/frost-checkbox}}
 ```
 

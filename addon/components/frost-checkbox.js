@@ -28,13 +28,8 @@ export default Ember.Component.extend({
     input () {
       let id = this.get('value')
 
-      if (_.isFunction(this.attrs['onInput'])) {
-        this.attrs['onInput']({
-          id: Ember.isEmpty(id) ? this.get('id') : id,
-          value: this.$('input').prop('checked')
-        })
-      } else {
-        this.sendAction('onInput', {
+      if (_.isFunction(this.attrs.onInput)) {
+        this.attrs.onInput({
           id: Ember.isEmpty(id) ? this.get('id') : id,
           value: this.$('input').prop('checked')
         })

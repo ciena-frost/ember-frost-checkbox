@@ -22,5 +22,22 @@ describeComponent(
       this.render(hbs`{{frost-checkbox}}`)
       expect(this.$()).to.have.length(1)
     })
+
+    it('triggers value change', function () {
+      this.set('checkbox-value', '')
+      this.on('valueChange', function (val) {
+        this.set('checkbox-value', val)
+      })
+      this.render(hbs`{{#frost-checkbox
+        id="value"
+        value="value"
+        on-input=(action "valueChange")}}value{{/frost-checkbox}}
+      `)
+      var input = this.$('input')
+      input.trigger('input')
+      Ember.run.next(this, () => {
+        expect(this.get('checkbox-value')).to.eql(true)
+      })
+    })
   }
 )
